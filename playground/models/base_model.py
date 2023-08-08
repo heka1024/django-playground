@@ -1,7 +1,7 @@
-from django import models
+from django.db import models
 
 
-class BaseQuerySet(models.QuerySet):
+class BaseModelQuerySet(models.QuerySet):
     def created_before(self, date):
         return self.filter(created_at__lt=date)
 
@@ -25,7 +25,7 @@ class BaseModel(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    objects = BaseQuerySet.as_manager()
+    objects = BaseModelQuerySet.as_manager()
 
     class Meta:
         abstract = True
@@ -41,3 +41,5 @@ class BaseModel(models.Model):
         이미 DB에 저장된 레코드라면 False를 반환
         """
         return self.pk is None
+
+
