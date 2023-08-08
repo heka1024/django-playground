@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "playground"
+version = "0.1.0"
+description = ""
+authors = ["heka1024 <heka1024@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "3.11.3"
+django = "^4.2.4"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
