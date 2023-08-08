@@ -22,6 +22,8 @@ class Discardable(BaseModel):
     """Soft delete를 위한 abstract model"""
     discarded_at = models.DateTimeField(blank=True, null=True)
 
+    objects = DiscardableQuerySet.as_manager()
+
     class Meta:
         abstract = True
 
