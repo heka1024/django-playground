@@ -6,3 +6,5 @@ from playground.models import BaseModel
 
 class User(BaseModel, AbstractBaseUser):
     username = models.CharField(max_length=100, blank=True, null=False)
+
+    USERNAME_FIELD = 'username'
